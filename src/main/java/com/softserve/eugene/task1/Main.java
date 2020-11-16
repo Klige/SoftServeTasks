@@ -1,7 +1,7 @@
 package com.softserve.eugene.task1;
 
-import com.softserve.eugene.task2.ComplexMath;
-import com.softserve.eugene.task3.QuadraticEquation;
+import com.softserve.eugene.task2.ComplexNumberUtil;
+import com.softserve.eugene.task3.QuadraticEquationUtil;
 import com.softserve.eugene.task4.NumeralSystem;
 
 import java.util.InputMismatchException;
@@ -20,16 +20,21 @@ public class Main {
                         "0 - Quit program.\n");
                 int choice = scanner.nextInt();
 
-                if (choice == 1) {
-                    ComplexMath.go();
-                } else if (choice == 2) {
-                    QuadraticEquation.go();
-                } else if (choice == 3) {
-                    NumeralSystem.go();
-                } else if (choice == 0) {
-                    System.exit(0);
-                } else {
-                    throw new InputMismatchException();
+                switch (choice) {
+                    case (0):
+                        System.exit(0);
+                        break;
+                    case (1):
+                        ComplexNumberUtil.go();
+                        break;
+                    case (2):
+                        QuadraticEquationUtil.go();
+                        break;
+                    case (3):
+                        NumeralSystem.go();
+                        break;
+                    default:
+                        throw new InputMismatchException();
                 }
                 System.out.println("\n\nPress Enter key to continue...");
                 System.in.read();
